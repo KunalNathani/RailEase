@@ -1,0 +1,34 @@
+	<!--welcome-hero start -->
+    <div class="bodyy">
+    <section id="home" class="welcome-hero">
+        <div class="container" style="padding-left: 100px;">
+            <div class="welcome-hero-txt">
+                <h2>Seamless Journeys Start Here <br> </h2>
+                <p>
+                    Book Your Mumbai Local Train Tickets with </p> <h2> RailEase! </h2>
+            </div>
+            <div class="welcome-hero-serch-box">
+                <div class="form-group">
+                    <label for="source" style="background-color: white;color: black;">Source:</label>
+                    <select id="source" [(ngModel)]="selectedSource">
+                      <option value="" disabled>Select Source</option>
+                      <option *ngFor="let station of stations" [value]="station">{{ station }}</option>
+                    </select>
+                  </div>
+                
+                  <div class="form-group">
+                    <label for="destination" style="background-color: white;color: black;">Destination:</label>
+                    <select id="destination" [(ngModel)]="selectedDestination">
+                      <option value="" disabled>Select Destination</option>
+                      <option *ngFor="let station of stations" [value]="station">{{ station }}</option>
+                    </select>
+                  </div>
+                <div class="welcome-hero-serch">
+                    <button class="welcome-hero-btn" (click)="getTheFare()">
+                       <h2 style="color: white;"> <b> Get Fare</b> </h2> 
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section><!--/.welcome-hero-->
+    <!--welcome-hero end --></div>
