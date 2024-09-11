@@ -1,5 +1,14 @@
 package com.rail.railEase.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.rail.railEase.dto.BookTicketDto;
 import com.rail.railEase.dto.LoginRequest;
 import com.rail.railEase.dto.TicketResponseDto;
@@ -10,14 +19,10 @@ import com.rail.railEase.exception.ResourceNotFoundException;
 import com.rail.railEase.exception.UserAlreadyExists;
 import com.rail.railEase.model.Users;
 import com.rail.railEase.service.Users.UsersService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/users")
-@CrossOrigin(origins = "http://localhost:4200") // Allow CORS requests from this origin
+//@CrossOrigin(origins = "http://localhost:4200") // Allow CORS requests from this origin
 public class UsersController {
 
     @Autowired
