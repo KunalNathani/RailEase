@@ -1,14 +1,19 @@
 package com.rail.railEase.model;
 
-import jakarta.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+import org.springframework.stereotype.Component;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Set;
 
 @Entity
 @Data
@@ -28,6 +33,7 @@ public class Users implements Serializable {
     private String password;
 
     @Column(name = "email", nullable = false, unique = true, length = 25)
+    @Email(message = "Invalid email format")
     private String email;
 
     @Column(name = "phone", length = 20)
